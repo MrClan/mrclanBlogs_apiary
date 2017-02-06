@@ -1,0 +1,105 @@
+FORMAT: 1A
+HOST: http://polls.apiblueprint.org/
+
+# Blogs api
+
+Blogs is a simple typical API to let authenticated users post and see blogs
+
+## Blogs Collection [/blogs]
+
+### List All Blogs [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": 1,
+                "title": "Creating an API Doc using Apiary",
+                "content": "APIs make up the new language for businesses to communicate with each other. /r/n                As they increase in importance, more responsibility lies on those who build and manage the APIs. Apiary solves the fundamental task of improving API development, but for many companies, meeting those increasing expectations means not only working harder but also streamlining the business process of how work gets done. /r/nThis presentation covers the following:/r/nSharing APIs via links, Apiary Teams, and GitHub Integration Style guide deployment and enforcement to ensure API consistency Automated Test Driven Development (TDD) New and updated Apiary features",
+                "postedDate": "2015-08-05T08:40:51.620Z",
+                "lastModifiedDate": "2015-08-05T08:40:51.620Z",
+                "version": 1,
+                "likes": 48
+                "tags":["api",".net","rest","c#", ".net core", "web"]
+            },
+            {
+                "id": 2,
+                "title": "Blog 2",
+                "content": "APIs make up the new language for businesses to communicate with each other. /r/n                As they increase in importance, more responsibility lies on those who build and manage the APIs. Apiary solves the fundamental task of improving API development, but for many companies, meeting those increasing expectations means not only working harder but also streamlining the business process of how work gets done. /r/nThis presentation covers the following:/r/nSharing APIs via links, Apiary Teams, and GitHub Integration Style guide deployment and enforcement to ensure API consistency Automated Test Driven Development (TDD) New and updated Apiary features",
+                "postedDate": "2015-08-05T08:40:51.620Z",
+                "lastModifiedDate": "2015-08-05T08:40:51.620Z",
+                "version": 1,
+                "likes": 48
+                "tags":["api",".net","rest","c#", ".net core", "web"]
+            },
+            {
+                "id": 3,
+                "title": "Blog 3",
+                "content": "APIs make up the new language for businesses to communicate with each other. /r/n                As they increase in importance, more responsibility lies on those who build and manage the APIs. Apiary solves the fundamental task of improving API development, but for many companies, meeting those increasing expectations means not only working harder but also streamlining the business process of how work gets done. /r/nThis presentation covers the following:/r/nSharing APIs via links, Apiary Teams, and GitHub Integration Style guide deployment and enforcement to ensure API consistency Automated Test Driven Development (TDD) New and updated Apiary features",
+                "postedDate": "2015-08-05T08:40:51.620Z",
+                "lastModifiedDate": "2015-08-05T08:40:51.620Z",
+                "version": 1,
+                "likes": 48
+                "tags":["api",".net","rest","c#", ".net core", "web"]
+            },
+            {
+                "id": 4,
+                "title": "Blog 4",
+                "content": "APIs make up the new language for businesses to communicate with each other. /r/n                As they increase in importance, more responsibility lies on those who build and manage the APIs. Apiary solves the fundamental task of improving API development, but for many companies, meeting those increasing expectations means not only working harder but also streamlining the business process of how work gets done. /r/nThis presentation covers the following:/r/nSharing APIs via links, Apiary Teams, and GitHub Integration Style guide deployment and enforcement to ensure API consistency Automated Test Driven Development (TDD) New and updated Apiary features",
+                "postedDate": "2015-08-05T08:40:51.620Z",
+                "lastModifiedDate": "2015-08-05T08:40:51.620Z",
+                "version": 1,
+                "likes": 48
+                "tags":["api",".net","rest","c#", ".net core", "web"]
+            }
+        ]
+
+### Create a New Blog [POST]
+
+If the user is authenticated, they can create new blogs
+
++ Request (application/json)
+
+        {
+            "title": "New Blog added through API",
+            "content":"This is a sample blog content that should be saved on the successful completion of this post request",
+            "tags": [
+                "api",
+                ".net",
+                "rest",
+                "c#"
+            ],
+            "user": {
+                "username":"mrclan",
+                "email":"justmepratik@gmail.com",
+                "socialLinks": "fb.com/mrclan",
+                "profileLink":"users/mrclan",
+                "avatar":"users/mrclan/picture"
+            }
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /blogs/1
+
+    + Body
+
+            {
+                "title": "New Blog added through API",
+                "content":"This is a sample blog content that should be saved on the successful completion of this post request",
+                "tags": [
+                    "api",
+                    ".net",
+                    "rest",
+                    "c#"
+                ],
+                "user": {
+                    "username":"mrclan",
+                    "email":"justmepratik@gmail.com",
+                    "socialLinks": "fb.com/mrclan",
+                    "profileLink":"users/mrclan",
+                    "avatar":"users/mrclan/picture"
+                }
+            }
